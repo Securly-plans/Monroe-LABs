@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Portal</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #111;
+      color: white;
+      margin: 0;
+    }
+
+    .center {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    #content {
+      display: none;
+      padding: 20px;
+    }
+
+    .game {
+      background: #333;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    #adminPanel {
+      display: none;
+      margin-top: 20px;
+      background: #1a1a1a;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div class="center" id="loginPage">
+  <div class="box">
+    <h2>Login</h2>
+
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+    <button onclick="signup()">Sign Up</button>
+
+    <p id="msg"></p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="content">
+  <h1>Game Portal</h1>
+
+  <div id="pages"></div>
+
+  <button onclick="loadPages()">Refresh Pages</button>
+
+  <div id="adminPanel">
+    <h2>Admin Panel</h2>
+    <button onclick="createPage()">Create Page</button>
+  </div>
+
+  <button onclick="logout()">Logout</button>
+</div>
+
+<!-- FIREBASE CONFIG (GLOBAL) -->
+<script>
+  window.firebaseConfig = {
+    apiKey: "AIzaSyAjJIl9ahqtTxqYpbgDWMf6WvYJ86QQ4nk",
+    authDomain: "test-5c980.firebaseapp.com",
+    projectId: "test-5c980",
+    storageBucket: "test-5c980.firebasestorage.app",
+    messagingSenderId: "934327818159",
+    appId: "1:934327818159:web:06ad5d8fc6670a327a015a",
+    measurementId: "G-HXSYR52655"
+  };
+</script>
+
+<!-- MAIN SCRIPT -->
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
